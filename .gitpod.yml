@@ -14,4 +14,4 @@ tasks:
 vscode:
   extensions:
     - amazonwebservices.aws-toolkit-vscode
-    - hashicorp.terraform
+    - hashicorp.terraform 

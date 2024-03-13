@@ -79,7 +79,7 @@ in order to make ur bash scripts executable  we need to change linux permission 
 
 alternatively
 
-> chmod 774 ./bin/install_terraform_cli
+> chmod 774 ./bin/install_terraform_cli  
 
 https://en.wikipedia.org/wiki/Chmod
 
