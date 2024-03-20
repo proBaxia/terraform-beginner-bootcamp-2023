@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+cd /workspace
+
+# if AWS CLI is already install remove 
+
+rm -f '/workspace/awsliv2.zip'
+rm -rf '/workspace/aws'
+
+# Install AWS CLI
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+cd $PROJECT_ROOT
+
+
+# Check the installation
+aws --version
+
+# Get user identity
+aws sts get-caller-identity
