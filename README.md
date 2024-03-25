@@ -179,7 +179,7 @@ Terraform sources their provider and modules from  Terraform registry which is l
 
 **************************************************************
 
-### Terraform Console 
+#### Terraform Console 
 
 we can see a list of all Terraform command by simply typing `terraform`
 
@@ -207,7 +207,16 @@ if we want to automatically approve an apply we can provide the auto approve fla
 
  eg . `terraorm apply --auto-approve`
 
-### Terraform Lock Files 
+ #### Terraform Destroy 
+
+`terrafrom destroy`
+
+This will destroy resources.
+you can also use the auto approve flag to skp the approve prompt
+eg.`terrafrom destroy --auto-approve`
+
+
+#### Terraform Lock Files 
 
 `.terrafrom.lock.hcl` 
 
@@ -215,7 +224,7 @@ contains the locked versioning for the provider or modulues that should be used 
 
 The Terraform lock File **should be commited** to your Version Control System (VSC) eg. Github 
 
-### Terraform state Files 
+#### Terraform state Files 
 `.terraform.tfstate` 
 
 contain information about the current state of your infrastruture.
@@ -228,6 +237,6 @@ if you lose this file, you lose knowing the state of your infrastruture.
 
 `.terraform.tfstate.backup` is the previous state file state.
 
-### Terraform Directory 
+#### Terraform Directory 
 
 `.terraform` directory contains binaries of terraform prviders.
