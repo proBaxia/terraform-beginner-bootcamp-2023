@@ -240,3 +240,56 @@ if you lose this file, you lose knowing the state of your infrastruture.
 #### Terraform Directory 
 
 `.terraform` directory contains binaries of terraform prviders.
+
+## issues with Terrafrom Cloud and Login and Github Workspace
+
+ 
+When attemping to run `terrafrom login` it will launch bash a wiswig  view to generate a token. however it does not work expected in Gitpod Vscode 
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+Then create  and open the file manually here:
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provider the Following code (replace your token in the file):
+
+```json
+{
+    "credentials": {
+      "app.terraform.io": {
+        "token": "PASTE YOUR TOKEN HERE"
+      }
+    }
+}
+```
+when i did `terrafrom plan` i was having this error
+ ```
+
+│ 
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 20, in provider "aws":
+│   20: provider "aws" {
+│ 
+│ Please see https://registry.terraform.io/providers/hashicorp/aws
+│ for more information about providing credentials.
+
+ ```
+ it was resolve by adding my AWS_PROVIDER. region,access_key secret_key to my main.tf,
+ 
+  ```sh
+ provider "aws" {
+  region     = "us-west-2"  # Replace with your desired AWS region
+  access_key = "your_access_key"  # Replace with your AWS access key
+  secret_key = "your_secret_key"  # Replace with your AWS secret key
+}
+ ```
+ 
+  i will clear aws access key and aws_ secret_key from my main.tf before i push to my github, always keep your aws_secret_key and aws_acces_key save  
+
+

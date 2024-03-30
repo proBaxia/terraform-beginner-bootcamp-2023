@@ -1,4 +1,14 @@
 terraform {
+  cloud {
+    organization = "Gabriel-user"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+}
+
+terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -7,8 +17,11 @@ terraform {
   }
 }
 
-provider "aws" {
 
+provider "aws" {
+  region     = "us-west-2"  # Replace with your desired AWS region
+  access_key = "your_access_key"  # Replace with your AWS access key
+  secret_key = "your_secret_key"  # Replace with your AWS secret key
 }
 
 
