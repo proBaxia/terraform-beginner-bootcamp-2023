@@ -292,4 +292,5 @@ when i did `terrafrom plan` i was having this error
  
   i will clear aws access key and aws_ secret_key from my main.tf before i push to my github, always keep your aws_secret_key and aws_acces_key save  
 
-
+_________________________________________________________________________
+we have automate this workaround with the following bash scrpt [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
