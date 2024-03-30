@@ -294,3 +294,29 @@ when i did `terrafrom plan` i was having this error
 
 _________________________________________________________________________
 we have automate this workaround with the following bash scrpt [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+#### Set terraform (tf_alias) =terraform
+open your ./bash_profile copy and paste the code below to your ./bash_profile
+```
+alias tf="terraform"
+```
+open your terminal and and paste this code and enter 
+```
+source ~/.bash_profile
+```
+test your alias by typing 
+```
+tf
+```
+
+To make our (alias tf="terraform")  to be  Persistence we need to write a bash script 
+[set_tf_alias_bash_script](set_tf_alais) 
+
+```
+chmod u+x ./bin/set_tf_alias
+```
+
+On your [gitpod.yml](gitpod.yml) don't forget source so it will be on your task for start up 
+```
+source ./bin/set_tf_alias
+```
